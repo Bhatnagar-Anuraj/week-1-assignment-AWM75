@@ -86,21 +86,66 @@ cmds.move(building_x, building_height / 2.0, building_z, building)
 #   - Position it so it sits on the ground (not floating or buried).
 # ---------------------------------------------------------------------------
 
+sphere_radius = 5
+sphere_x = 5
+sphere_z = -15
+
+sphere = cmds.polySphere(
+    name="sphere_01",
+    radius=sphere_radius,
+)[0]
+
+cmds.move(sphere_x, sphere_radius * 1.0, sphere_z, sphere)
 
 # ---------------------------------------------------------------------------
 # TODO: Add Object 3
 # ---------------------------------------------------------------------------
+cylinder_radius = 2
+cylinder_height = 8
+cylinder_x = 1
+cylinder_z = 18
 
+cylinder = cmds.polyCylinder(
+    name="cylinder_01",
+    radius=cylinder_radius,
+    height=cylinder_height,
+)[0]
+
+cmds.move(cylinder_x, cylinder_height / 2.0, cylinder_z, cylinder)
 
 # ---------------------------------------------------------------------------
 # TODO: Add Object 4
 # ---------------------------------------------------------------------------
+cone_radius = 3
+cone_height = 6
+cone_x = 10
+cone_z = 4
 
+cone = cmds.polyCone(
+    name="cone_01",
+    radius=cone_radius,
+    height=cone_height,
+)[0]
+
+cmds.move(cone_x, cone_height / 2.0, cone_z, cone)
 
 # ---------------------------------------------------------------------------
 # TODO: Add Object 5
 # ---------------------------------------------------------------------------
+Tower_width = 4
+Tower_height = 14
+Tower_depth = 4
+Tower_x = 3
+Tower_z = -2
 
+Tower = cmds.polyCube(
+    name="Tower_01",
+    width=Tower_width,
+    height=Tower_height,
+    depth=Tower_depth,
+)[0]
+
+cmds.move(Tower_x, Tower_height / 2.0, Tower_z, Tower)
 
 # ---------------------------------------------------------------------------
 # TODO (Optional): Add more objects to make your scene more interesting!
@@ -114,3 +159,7 @@ cmds.move(building_x, building_height / 2.0, building_z, building)
 # ---------------------------------------------------------------------------
 cmds.viewFit(allObjects=True)
 print("Scene built successfully!")
+
+cd assignment
+python test_assignment.py 
+
